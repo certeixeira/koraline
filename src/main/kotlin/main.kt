@@ -6,6 +6,7 @@ import dev.kord.core.event.message.*
 import java.security.Security
 
 val textos = mutableListOf<String>()
+val nomes = mutableListOf<String>()
 
 suspend fun main() {
     /*the bot has a bug when i tried to run, so i found a solution on stackoverflow,
@@ -16,15 +17,16 @@ suspend fun main() {
 
 
     val cliente = Kord("OTEyODIzMzY0MjI0MTc2MTQ4.YZ1jAQ.5Fpjs9CGNNYzn4_WKmzOP9SEmIQ")
-
+//bot commands
     cliente.on<MessageCreateEvent> {
-        val mensagemSplit = message.content.split(" ")
-        when(mensagemSplit[0]){
-            "!enquete" -> enquete(mensagemSplit, message)
+        val messageSplit = message.content.split(" ")
+        when(messageSplit[0]){
+            "!enquete" -> enquete(messageSplit, message)
             "!curiosidade" -> curiosidade(message)
-            "!guardar" -> guardarTexto(mensagemSplit, message)
+            "!guardar" -> guardarTexto(messageSplit, message)
             "!mostrar" -> mostrarTextos(message)
             "!boaNoite" -> boaNoite(message)
+            "!xinga" -> pegaNome(messageSplit, message)
         }
     }
 

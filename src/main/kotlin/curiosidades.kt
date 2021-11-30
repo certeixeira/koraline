@@ -17,7 +17,7 @@ val curiosidades = listOf(
     "Não sou proxy do google"
 )
 
-suspend fun curiosidade(mensagemDados: Message) {
+suspend fun curiosidade(messageData: Message) {
     val curiosidade = curiosidades.random()
-    mensagemDados.channel.createMessage(curiosidade)
+    messageData.channel.createMessage(curiosidade)
 }

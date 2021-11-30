@@ -11,7 +11,7 @@ val boaNoites = listOf(
     "kkkkkkkkkkkk"
 )
 
-suspend fun boaNoite (mensagemDados: Message) {
+suspend fun boaNoite (messageData: Message) {
     val dormir = boaNoites.random()
-    mensagemDados.channel.createMessage(dormir)
+    messageData.channel.createMessage(dormir)
 }

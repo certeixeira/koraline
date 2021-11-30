@@ -2,8 +2,8 @@ package koraline
 
 import dev.kord.core.entity.*
 
-suspend fun mostrarTextos(mensagemDados: Message) {
+suspend fun mostrarTextos(messageData: Message) {
     val textosString = textos.joinToString(", ")
-    mensagemDados.channel.createMessage(
+    messageData.channel.createMessage(
         "As mensagens guardadas são: $textosString")
 }
